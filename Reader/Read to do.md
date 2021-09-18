@@ -6,7 +6,7 @@
 
 * [深度好文|面试官：进程和线程，我只问这19个问题](https://cloud.tencent.com/developer/article/1763620)
 
-* 
+* [美团技术团队学习指导](https://tech.meituan.com/2020/03/26/meituan-tech-corporate-recruitment.html)
 
 ### 私人oneTab
 
