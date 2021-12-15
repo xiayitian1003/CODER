@@ -11,6 +11,7 @@ public class ThreadSync{
         add.join();
         dec.join();
         System.out.println(Counter.count);
+        synchronized (ThreadSync.class){};
     }
 }
 
@@ -19,6 +20,7 @@ class Counter {
 //    public static final Object lock1 = new Object(); mistake
 //    public static final Object lock2 = new Object();
     public static int count = 0;
+
 }
 
 class AddThread extends Thread {
