@@ -37,17 +37,17 @@ class Thread1 extends Thread {
 class Thread2 extends Thread {
 
     public void run() {
-        System.out.println("Thread-2: try get lock B...");
+        System.out.println("Thread-2: try get lock A...");
         synchronized (ThreadDeadlock.LOCK_A) {
-            System.out.println("Thread-2: lock B got.");
+            System.out.println("Thread-2: lock A got.");
             ThreadDeadlock.sleep1s();
-            System.out.println("Thread-2: try get lock A...");
+            System.out.println("Thread-2: try get lock B...");
             synchronized (ThreadDeadlock.LOCK_B) {
-                System.out.println("Thread-2: lock A got.");
+                System.out.println("Thread-2: lock B got.");
                 ThreadDeadlock.sleep1s();
             }
-            System.out.println("Thread-2: lock A released.");
+            System.out.println("Thread-2: lock B released.");
         }
-        System.out.println("Thread-2: lock B released.");
+        System.out.println("Thread-2: lock A released.");
     }
 }
