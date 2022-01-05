@@ -1,4 +1,4 @@
-
+package src;
 //: concurrency/SimplePriorities.java
 // Shows the use of thread priorities.
 
