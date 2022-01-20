@@ -144,3 +144,4 @@
 #     for j in range(10 ** i):
 #         total += have2(j)
 #     print(10 ** i, total)
+
