@@ -80,5 +80,80 @@
 #         cnt += 1
 # print(cnt)
 
-strs = input()
-for i in len(strs):
+# def flipLetter(s):
+#     if s.isupper():
+#         s = s.lower()
+#     elif s.islower():
+#         s = s.upper()
+#     return s
+#
+#
+# strs = input()
+# # strs[0] = 'c'
+# ans = ""
+# for i in range(len(strs)):
+#     ans += flipLetter(strs[i])
+# print(ans)
+
+# s = input().split()
+# ans = ""
+# for i in s:
+#     ans += i + " "
+# print(ans.rstrip())
+
+# strs = input()
+# findit = False
+# for i in range(len(strs)):
+#     if strs.count(strs[i]) == 1:
+#         print(strs[i])
+#         findit = True
+#         break
+#
+# if findit == False:
+#     print("no")
+
+# strs = input()
+# if strs == strs[::-1]:
+#     print("yes")
+# else:
+#     print("no")
+
+# s_list = input().split(",")
+# s, s1, s2 = s_list[0], s_list[1], s_list[2]
+# x1, x2 = s.find(s1), s.rfind(s2)
+# if x1 > -1 and (x2 - x1) >= len(s1):
+#     print(x2 - x1 - len(s1))
+# else:
+#     print("-1")
+
+# n = int(input())
+# for i in range(n):
+#     s_list = input().split()
+#     s1, s2 = s_list[0], s_list[1]
+#     times = s1.count(s2)
+#     if times > 0:
+#         last_position = int(0)
+#         for j in range(times):
+#             print(s1.find(s2, last_position), end=" ")
+#             last_position = s1.find(s2, last_position) + len(s2)
+#         print("")
+#     else:
+#         print("no")
+#
+
+#Calender
+# def
+#
+#
+# def countDay(a, b, c):
+#
+#
+#
+# n = int(input())
+# for i in range(n):
+#     date = list(map(int, input().split()))
+#     y, m, d = date[0], date[1], date[2]
+#     if -1000000 <= y <= 1000000 and 0 <= m <= 12 and 0 <= d <= 31:
+#         print(countDay(y, m, d))
+#     else:
+#         print("Illegal")
