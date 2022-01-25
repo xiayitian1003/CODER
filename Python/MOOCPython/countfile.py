@@ -17,11 +17,14 @@ def countfile(filename, words):
     splitStr = ""
     for c in splitChars:
         if c in {'.', '?', '!', '"', "'", '(', ')', '|', '*', '$', '\\', '[', ']', '^', '{', '}'}:
-            splitStr += "\\" + c
+            splitStr += "\\" + c + "|"
         else:
-            splitStr += c
+            splitStr += c + "|"
     splitStr += " "
-    lst = re.split(txt, splitStr)
+    print(splitStr)
+    # print(txt)
+    lst = re.split(splitStr, txt)
+    # print(lst)
     for x in lst:
         if x == "":
             continue
@@ -32,11 +35,12 @@ def countfile(filename, words):
             words[lx] = 1
     return 1
 
-result = {"a": 3}
+
+result = {}
 if countfile(sys.argv[1], result) == 0:
     exit()
 lst = list(result.items())
-lst.sort(key=lambda x: x[1])
+lst.sort(key=lambda x: -x[1])
 with open("statistics.txt", "w", encoding="utf-8") as ans:
     for i in lst:
         ans.write("%s\t%d\n" % (i[0], i[1]))
