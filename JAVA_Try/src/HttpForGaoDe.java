@@ -19,14 +19,17 @@ public class HttpForGaoDe {
     public static void syncGet() throws InterruptedException, IOException {
         String address = "阿比让";
 //        address = URLEncoder.encode(address, "utf-8");
-
+        String cityname = "London";
         String jsonUrl = BASE_PATH + "/geocode/geo?address=" + address + "&output=json&key="+ KEY;
         String xmlUrl = BASE_PATH + "/geocode/geo?address=" + address + "&output=XML&key="+ KEY;
+        String GoogleUrl = "https://maps.google.com/maps/api/geocode/xml?address=" + cityname + "&sensor=false&key=AIzaSyANwyzATc9tWikgI-QzPM7pnNOFGEhCKKQ";
+
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                             .GET()
-                            .uri(URI.create(jsonUrl))
-//                            .uri(URI.create("/geocode/geo?address=北京&city&output=XML&key=<>"))
+//                            .uri(URI.create(jsonUrl))
+//                            .uri(URI.create("https://restapi.amap.com/v3/geocode/geo?address=北京&output=XML&key=86959160eb68570d15ae3236db7aa989"))
+                            .uri(URI.create(GoogleUrl))
                             .build();
         HttpResponse<String> response =
                 client.send(request, HttpResponse.BodyHandlers.ofString());
