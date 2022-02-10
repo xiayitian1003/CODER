@@ -5,8 +5,6 @@ import static java.lang.Integer.parseInt;
 import static java.util.Calendar.*;
 
 
-
-
 public class WeekDaysTry {
     private static final int ALL_DAYS = 0x7F;
     private int mBits;
@@ -46,7 +44,10 @@ public class WeekDaysTry {
         return (mBits & bit) > 0;
     }
 
-    public boolean isRepeating() { return mBits != 0; }
+    public boolean isRepeating() {
+        return mBits != 0;
+    }
+
     public String toNewString(Order order) {
         if (!isRepeating()) {
             return "仅响一次";
@@ -70,7 +71,7 @@ public class WeekDaysTry {
                     builder.append(",");
                 }
                 int j = i;
-                while (isBitOn(orderWeekdays.get(j)) && j < orderWeekdays.size()) {
+                while (j < orderWeekdays.size() && isBitOn(orderWeekdays.get(j))) {
                     length++;
                     j++;
                 }
@@ -82,6 +83,7 @@ public class WeekDaysTry {
                     builder.append(weekdays[calendarDay] + "to" + weekdays[orderWeekdays.get(j - 1)]);
                 }
                 i = j - 1;
+                length = 0;
             }
         }
 
