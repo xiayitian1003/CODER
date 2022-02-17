@@ -13,7 +13,7 @@ def pick_point_search_for_city(cityname, countryname):
     else:
         ans_dic = r.json()[0]
         print(ans_dic['lat'] + "," + ans_dic['lon'])
-        return {'lat': float(ans_dic['lat']), 'lon': float(ans_dic['lon'])}
+        return {'lat': float(ans_dic['lat']), 'lon': float(ans_dic['lon']), 'display_name': ans_dic['display_name']}
 
 
 def gaode_search_for_city(cityname, countryname):
