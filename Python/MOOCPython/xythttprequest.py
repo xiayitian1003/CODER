@@ -53,12 +53,23 @@ def gaode_reverse_geo_code(lon, lat):
     print(r.status_code)
     ans = r.json()
     print(ans)
-    return {'formatted_address': ans['regeocode']['formatted_address'],
-            'city': ans['regeocode']['addressComponent']['city'],
-            'country': ans['regeocode']['addressComponent']['country']}
+    get_values = dict({})
+    if ans.get('regeocode', None) is not None:
+        get_values.update({'formatted_address': ans['regeocode'].get('formatted_address', "none"), })
+        if ans['regeocode'].get('addressComponent', None) is not None:
+            get_values.update({'city': ans['regeocode']['addressComponent'].get('city', "none"),
+                               'country': ans['regeocode']['addressComponent'].get('country', "none"),
+                               'countrycode': ans['regeocode']['addressComponent'].get('countrycode', "none")})
+        else:
+            get_values.update({'city': str("not found"),
+                               'country': str("not found"),
+                               'countrycode': str("not found")})
+    else:
+        get_values.update({'formatted_address': str("nothing"), 'city': str("nothing"), 'country': str("nothing"),
+                           'countrycode': str("nothing")})
 
-
-# gaode_reverse_geo_code(18.5509126, 4.3907153)
+    return get_values
+# print(gaode_reverse_geo_code(18.5509126, 4.3907153))
 # gaode_search_for_city("巴林", "bh")
 # pick_point_search_for_city("巴林", None)
 # pick_point_reverse_geo_code(26.1551249, 50.5344606)
