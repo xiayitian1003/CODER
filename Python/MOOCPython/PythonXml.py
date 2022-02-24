@@ -1,7 +1,7 @@
 from xml.dom.expatbuilder import TEXT_NODE
 from xml.dom.minidom import parse
 
-from xyt_excel import get_excel_city_set, get_translate_city_list
+# from xyt_excel import get_excel_city_set, get_translate_city_list
 
 chinese_dir = "D:\\CODE\\workstation\\Document\\9.0\\cities.txt"
 
@@ -58,10 +58,33 @@ def gen_index_city_dict(xml_dir, order):
     print(len(city_index_dict))
     return city_index_dict
 
+# def insert_after(node):
+#     if node.nextSibling is None:
+
+# def connect_string_geoinfo(xml_node, geo_info):
+#     # 遍历xml字符串，检索excel中对应条目。
+#     #     传入字符串信息，返回excel中的经纬国家信息
+#     #     元素节点，文本节点插入，字符串拼接
+
+# def is_timezone_node(node):
+#     ans = False
+#     if node.hasAttributes("id") and (node.getAttribute("id") == "TIMEZONE"):
+#         node.parentNode.appChild()
+
 
 def main():
-    gen_index_city_dict()
+    city_xml_dir = "D:\\CODE\\workstation\\Document\\9.0\\字符串拼接\\XML-string-connect.xml"
+    file_object = get_xml_list_by_root(city_xml_dir)
+    cities = file_object.getElementsByTagName('string')
+    for city in cities:
+        # print(city.nodeValue)
+        for child in city.childNodes:
+            # print(type(child.attributes))
+            print(child, end="")
+        print()
+    # excel_dir = ""
 
+    # gen_index_city_dict()
     # element_obj = get_xml_list_by_root(chinese_dir)
     # xliff_g_list = element_obj.getElementsByTagName('xliff:g')
     # print(xliff_g_list)

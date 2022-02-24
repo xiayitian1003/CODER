@@ -129,7 +129,7 @@ def correct_location(city, lat, lon, sheet):
     cnt, num = int(0), int(0)
     for row in sheet.rows:
         cnt += 1
-        lat_xy, lon_xy = 'K' + str(cnt), 'L' + str(cnt)
+        lat_xy, lon_xy = 'H' + str(cnt), 'I' + str(cnt)
         if str(row[5].value) == "1":
             if city == row[1].value:
                 sheet[lat_xy], sheet[lon_xy] = lat, lon
